@@ -3,11 +3,11 @@ clear all;
 close all;
 clc;
 %%
-[Audiodata FS] = audioread('C:\Users\jiaor\Desktop\Ê±ÆµĞÅºÅ·ÖÎö\½¹ÈóÖ®.m4a');
+[Audiodata FS] = audioread('C:\Users\jiaor\Desktop\æ—¶é¢‘ä¿¡å·åˆ†æ\ä½ å¥½.m4a');
 SingleWayAudio = Audiodata(:,1);
 Timelength = length(SingleWayAudio)/FS;
 Time = linspace(0,Timelength,length(SingleWayAudio));
-plot(Time,SingleWayAudio);title('·¢Òô£º½¹ÈóÖ®(¹éÒ»»¯·ù¶È)');xlabel('Ê±¼ä/S');
+plot(Time,SingleWayAudio);title('å‘éŸ³ï¼šä½ å¥½(å½’ä¸€åŒ–å¹…åº¦)');xlabel('æ—¶é—´/S');
 %sound(SingleWayAudio,FS);
 %%
 STFT = [];
@@ -22,4 +22,4 @@ STFT = STFT/value;
 STFT = STFT';
 Time = linspace(0,Timelength,3936);
 Freq = linspace(0,8000,1024);
-contour(Time,Freq,STFT);title('Ê±ÆµÍ¼'),xlabel('Ê±¼ä/s');ylabel('ÆµÂÊ/Hz');
+contour(Time,Freq,STFT);title('æ—¶é¢‘å›¾'),xlabel('æ—¶é—´/s');ylabel('é¢‘ç‡/Hz');
